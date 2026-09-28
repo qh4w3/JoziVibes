@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8"><meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Gold Reef City - Joburg Vibes</title>
+  <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@700&family=Poppins:wght@400;500;600&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <header class="container">
+    <nav class="navbar">
+      <a href="index.html" class="logo">Joburg Vibes</a>
+      <ul class="nav-links">
+        <li><a href="index.html">Home</a></li>
+        <li><a href="goldreef.html" class="active">Gold Reef</a></li>
+        <li><a href="elephant.html">Elephant Sanctuary</a></li>
+        <li><a href="museum.html">Museum of Illusions</a></li>
+      </ul>
+    </nav>
+  </header>
+
+  <section class="container">
+    <h1 class="section-title">Gold Reef City</h1>
+    <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQM44JIdi6-o_cjdSdrxWQhwZRKNHAKo8-G0Ath1Of0dA&s=10" alt="Gold Reef City">
+
+    <div class="card">
+      <h2>About Gold Reef</h2>
+      <p>Step into a 19th-century gold rush town with modern theme park thrills. Home to the famous Anaconda rollercoaster, casino, and underground mine tours.</p>
+      <p><b>Survey Highlight:</b> 71% of people said this is their #1 spot for "theme park rides".</p>
+      <p><b>Top Activities:</b> Rollercoasters, Casino, Mine Tour, 4D Cinema</p>
+      <p><b>Hours:</b> Tue - Sun 9am - 6pm</p>
+      <p><b>Location:</b> Southern Johannesburg</p>
+    </div>
+
+    <div class="card">
+      <h2>Rate Gold Reef City</h2>
+      <p>How was your experience?</p>
+      <div class="rating" id="rating-goldreef">
+        <span class="star" data-value="1">★</span>
+        <span class="star" data-value="2">★</span>
+        <span class="star" data-value="3">★</span>
+        <span class="star" data-value="4">★</span>
+        <span class="star" data-value="5">★</span>
+      </div>
+      <p id="rating-text" style="margin-top:1rem; color:var(--text-muted);"></p>
+      <p>Majority gave 5 star ratings</p>
+    </div>
+  </section>
+
+<script>
+  // Simple star rating
+  const stars = document.querySelectorAll('#rating-goldreef .star');
+  stars.forEach(star => {
+    star.addEventListener('click', () => {
+      const val = star.dataset.value;
+      stars.forEach(s => s.classList.toggle('active', s.dataset.value <= val));
+      document.getElementById('rating-text').innerText = `You rated Gold Reef ${val} out of 5 stars!`;
+    });
+  });
+</script>
+  <footer><p>© 2026 Joburg Vibes</p></footer>
+</body>
+</html>

@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8"><meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Elephant Sanctuary - Joburg Vibes</title>
+  <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@700&family=Poppins:wght@400;500;600&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <header class="container">
+    <nav class="navbar">
+      <a href="index.html" class="logo">Joburg Vibes</a>
+      <ul class="nav-links">
+        <li><a href="index.html">Home</a></li>
+        <li><a href="goldreef.html">Gold Reef</a></li>
+        <li><a href="elephant.html" class="active">Elephant Sanctuary</a></li>
+        <li><a href="museum.html">Museum of Illusions</a></li>
+      </ul>
+    </nav>
+  </header>
+
+  <section class="container">
+    <h1 class="section-title">Elephant Sanctuary</h1>
+    <img src="https://www.elephantsanctuary.co.za/images/GalleryHP/elephant-santuary-plett-Gallery-(4).jpg" alt="Elephant Sanctuary">
+
+    <div class="card">
+      <h2>About The Sanctuary</h2>
+      <p>An ethical, educational experience where you can feed, touch, and walk with rescued elephants. Perfect for families and nature lovers.</p>
+      <p><b>Survey Highlight:</b> 6% voted this #1"group activities" place.</p>
+      <p><b>Top Activities:</b> Elephant Feeding, Bush Walks, Photo Sessions, Conservation Talk</p>
+      <p><b>Hours:</b> Daily 8am - 5pm</p>
+    </div>
+
+    <div class="card">
+      <h2>Rate The Elephant Sanctuary</h2>
+      <div class="rating" id="rating-elephant">
+        <span class="star" data-value="1">★</span><span class="star" data-value="2">★</span>
+        <span class="star" data-value="3">★</span><span class="star" data-value="4">★</span>
+        <span class="star" data-value="5">★</span>
+      </div>
+      <p id="rating-text-ele" style="margin-top:1rem; color:var(--text-muted);"></p>
+      <p>Majority gave 1 star ratings</p>   
+     </div>
+  </section>
+
+<script>
+  const stars = document.querySelectorAll('#rating-elephant .star');
+  stars.forEach(star => {
+    star.addEventListener('click', () => {
+      const val = star.dataset.value;
+      stars.forEach(s => s.classList.toggle('active', s.dataset.value <= val));
+      document.getElementById('rating-text-ele').innerText = `You rated the Sanctuary ${val} out of 5 stars!`;
+    });
+  });
+</script>
+  <footer><p>© 2026 Joburg Vibes</p></footer>
+</body>
+</html>

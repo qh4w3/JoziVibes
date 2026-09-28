@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8"><meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Museum of Illusions - Joburg Vibes</title>
+  <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@700&family=Poppins:wght@400;500;600&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <header class="container">
+    <nav class="navbar">
+      <a href="index.html" class="logo">Joburg Vibes</a>
+      <ul class="nav-links">
+        <li><a href="index.html">Home</a></li>
+        <li><a href="goldreef.html">Gold Reef</a></li>
+        <li><a href="elephant.html">Elephant Sanctuary</a></li>
+        <li><a href="museum.html" class="active">Museum of Illusions</a></li>
+      </ul>
+    </nav>
+  </header>
+
+  <section class="container">
+    <h1 class="section-title">Museum of Illusions</h1>
+    <img src="https://moijoburg.co.za/wp-content/uploads/2024/07/image-press-release-post-joburg-SA-museum-of-illusions-now-open-in-johannesburg-2080x1170-2.jpg" alt="Test Image">
+
+    <div class="card">
+      <h2>About The Museum</h2>
+      <p>Over 60 interactive exhibits that trick your mind and break your camera. Vortex tunnel, infinity room, and holograms.</p>
+      <p><b>Survey Highlight:</b> 42% voted this #1 for "photos and going with friends".</p>
+      <p><b>Top Activities:</b> Vortex Tunnel, Ames Room, Infinity Room, Puzzle Games</p>
+      <p><b>Hours:</b> Daily 10am - 8pm</p>
+    </div>
+
+    <div class="card">
+      <h2>Rate The Museum of Illusions</h2>
+      <div class="rating" id="rating-museum">
+        <span class="star" data-value="1">★</span><span class="star" data-value="2">★</span>
+        <span class="star" data-value="3">★</span><span class="star" data-value="4">★</span>
+        <span class="star" data-value="5">★</span>
+      </div>
+      <p id="rating-text-mus" style="margin-top:1rem; color:var(--text-muted);"></p>
+    </div>
+  </section>
+
+<script>
+  const stars = document.querySelectorAll('#rating-museum .star');
+  stars.forEach(star => {
+    star.addEventListener('click', () => {
+      const val = star.dataset.value;
+      stars.forEach(s => s.classList.toggle('active', s.dataset.value <= val));
+      document.getElementById('rating-text-mus').innerText = `You rated the Museum ${val} out of 5 stars!`;
+    });
+  });
+</script>
+  <footer><p>© 2026 Joburg Vibes</p></footer>
+</body>
+</html>
